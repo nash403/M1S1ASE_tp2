@@ -31,8 +31,9 @@ void exec_f(struct ctx_s * ctx)
   assert(ctx != NULL);
   ctx->state = CTX_ACTIVATED;
   ctx->entrypoint(ctx->args);
-  printf("exec_f terminated")
-  while(1);
+  ctx->state = CTX_TERMINATED;
+  printf("exec_f terminated");
+  exit(1);
 }
 
 void switch_to_ctx(struct ctx_s* ctx)

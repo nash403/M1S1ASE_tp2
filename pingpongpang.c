@@ -44,8 +44,18 @@ void f_pong(void * arg)
     while(1)
     {
       printf("1");
-      switch_to_ctx(&ctx_ping);
+      switch_to_ctx(&ctx_pang);
       printf("2");
+      switch_to_ctx(&ctx_pang);
+    }
+}
+
+void f_pang(void * arg)
+{
+  int i;
+  for(i = 1; i<=100;++i)
+    {
+      printf("x%d",i);
       switch_to_ctx(&ctx_ping);
     }
 }
